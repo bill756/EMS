@@ -1,0 +1,130 @@
+/* 全局变量定义 */
+:root {
+    /* 主色调 - 高级感蓝绿色系 */
+    --primary-color: #3a8ee6; /* 主色 - 蓝色 */
+    --primary-light: #5ca9f8; /* 主色浅色 */
+    --primary-dark: #2c6cb0; /* 主色深色 */
+
+    /* 辅助色 */
+    --secondary-color: #53c2c1; /* 辅助色 - 青绿色 */
+    --accent-color: #8e44ad; /* 强调色 - 优雅紫色 */
+
+    /* 中性色 */
+    --bg-color: #f5f7fa; /* 背景色 - 浅灰色 */
+    --card-bg: #ffffff; /* 卡片背景 - 白色 */
+    --border-color: #e4e7ed; /* 边框色 - 浅灰 */
+    --text-primary: #303133; /* 主要文字 - 深灰近黑 */
+    --text-regular: #606266; /* 常规文字 - 灰色 */
+    --text-secondary: #909399; /* 次要文字 - 浅灰 */
+
+    /* 功能色 */
+    --success-color: #67c23a; /* 成功色 - 绿色 */
+    --warning-color: #e6a23c; /* 警告色 - 橙色 */
+    --danger-color: #f56c6c; /* 危险色 - 红色 */
+    --info-color: #909399; /* 信息色 - 灰色 */
+
+    /* 阴影 */
+    --box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    --box-shadow-light: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
+    --box-shadow-dark: 0 4px 16px 0 rgba(0, 0, 0, 0.15);
+
+    /* 圆角 */
+    --border-radius-small: 2px;
+    --border-radius: 4px;
+    --border-radius-large: 8px;
+
+    /* 过渡 */
+    --transition-duration: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    background-color: var(--bg-color);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-duration) ease;
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+/* 全局卡片样式 */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow var(--transition-duration) ease;
+}
+
+.card:hover {
+    box-shadow: var(--box-shadow-dark);
+}
+
+/* 全局标题样式 */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    margin-top: 0;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+/* 全局按钮样式覆盖 */
+.el-button--primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.el-button--primary:hover, .el-button--primary:focus {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+/* 全局输入框样式覆盖 */
+.el-input__inner:focus {
+    border-color: var(--primary-color);
+}
+
+/* 全局表格样式覆盖 */
+.el-table th {
+    background-color: var(--bg-color);
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td {
+    background-color: rgba(var(--primary-color), 0.05);
+}
