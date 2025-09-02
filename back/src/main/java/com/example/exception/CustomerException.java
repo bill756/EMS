@@ -1,3 +1,8 @@
+/**
+ * 自定义异常类
+ */
+
+
 package com.example.exception;
 
 //自定义异常（运行时异常）

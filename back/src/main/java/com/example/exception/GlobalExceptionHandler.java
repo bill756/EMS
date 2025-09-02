@@ -1,3 +1,7 @@
+/**
+ * 全局异常处理类
+ */
+
 package com.example.exception;
 
 //全局异常处理

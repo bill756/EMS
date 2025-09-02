@@ -1,3 +1,7 @@
+/**
+ * 程序入口
+ */
+
 package com.example;
 
 import org.mybatis.spring.annotation.MapperScan;

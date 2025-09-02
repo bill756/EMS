@@ -1,3 +1,7 @@
+/**
+ * 管理员映射接口
+ */
+
 package com.example.mapper;
 
 import com.example.entity.Admin;

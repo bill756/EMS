@@ -1,3 +1,7 @@
+/**
+ * 管理员实体类
+ */
+
 package com.example.entity;
 
 public class Admin {

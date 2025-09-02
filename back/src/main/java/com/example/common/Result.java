@@ -1,3 +1,7 @@
+/**
+ * 全局返回结果
+ */
+
 package com.example.common;
 
 public class Result {

@@ -1,3 +1,8 @@
+/**
+ * 跨域配置
+ */
+
+
 package com.example.common;
 
 import org.springframework.context.annotation.Bean;
