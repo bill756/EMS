@@ -70,7 +70,7 @@ import {ArrowLeft, House, Warning} from '@element-plus/icons-vue'
 const router = useRouter()
 
 const goHome = () => {
-  router.push('/manager')
+  router.push('/')
 }
 
 const goBack = () => {
