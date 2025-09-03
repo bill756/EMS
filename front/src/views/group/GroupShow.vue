@@ -1,6 +1,6 @@
 <template>
 <div>
-  小组管理
+  小组管理Show
 </div>
 </template>
 

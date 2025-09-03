@@ -1,6 +1,6 @@
 <template>
   <div>
-    考核管理
+    考核管理Show
   </div>
 </template>
 

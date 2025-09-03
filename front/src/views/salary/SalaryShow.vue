@@ -1,6 +1,6 @@
 <template>
   <div>
-    工资管理
+    工资管理Show
   </div>
 </template>
 

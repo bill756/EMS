@@ -4,7 +4,7 @@
     <div class="head">
       <!--左侧-->
       <div class="title">
-        <img alt="员工管理系统" class="title_logo" src="@/assets/imgs/employee_logo.svg">
+        <img alt="员工管理系统" class="title_logo" src="../assets/imgs/employee_logo.svg">
         <span>员工管理系统</span>
       </div>
       <!--右侧-->
@@ -19,7 +19,7 @@
         <!--头像下拉菜单-->
         <el-dropdown trigger="click">
           <div class="avatar-container">
-            <img alt="管理员头像" class="admin" src="@/assets/imgs/admin_avatar.svg">
+            <img alt="管理员头像" class="admin" src="../assets/imgs/admin_avatar.svg">
             <span class="user-name">管理员</span>
           </div>
           <template #dropdown>
@@ -67,40 +67,67 @@
             default-active="1"
             text-color="#fff">
           <!-- 首页菜单项 -->
-          <el-menu-item index="1" @click="router.push('/manager/home')">
+          <el-menu-item index="1" @click="router.push('/')">
             <el-icon>
               <HomeFilled/>
             </el-icon>
             <span>首页</span>
           </el-menu-item>
           <!-- 小组管理菜单项 -->
-          <el-menu-item index="2" @click="router.push('/manager')">
-            <el-icon>
-              <UserFilled/>
-            </el-icon>
-            <span>小组管理</span>
-          </el-menu-item>
+          <el-sub-menu index="2">
+            <template #title>
+              <el-icon>
+                <UserFilled/>
+              </el-icon>
+              <span>小组管理</span>
+            </template>
+            <el-menu-item index="2-1" @click="router.push('/groupShow')">看板</el-menu-item>
+            <el-menu-item index="2-2" @click="router.push('/groupManager')">管理</el-menu-item>
+          </el-sub-menu>
           <!-- 员工管理菜单项 -->
-          <el-menu-item index="3" @click="router.push('/manager')">
-            <el-icon>
-              <Avatar/>
-            </el-icon>
-            <span>员工管理</span>
-          </el-menu-item>
+          <el-sub-menu index="3">
+            <template #title>
+              <el-icon>
+                <Avatar/>
+              </el-icon>
+              <span>员工管理</span>
+            </template>
+            <el-menu-item index="3-1" @click="router.push('/employeeShow')">看板</el-menu-item>
+            <el-menu-item index="3-2" @click="router.push('/employeeManager')">管理</el-menu-item>
+          </el-sub-menu>
           <!-- 考勤管理菜单项 -->
-          <el-menu-item index="4" @click="router.push('/manager')">
-            <el-icon>
-              <Calendar/>
-            </el-icon>
-            <span>考勤管理</span>
-          </el-menu-item>
+          <el-sub-menu index="4">
+            <template #title>
+              <el-icon>
+                <Calendar/>
+              </el-icon>
+              <span>考勤管理</span>
+            </template>
+            <el-menu-item index="4-1" @click="router.push('/attendanceShow')">看板</el-menu-item>
+            <el-menu-item index="4-2" @click="router.push('/attendanceManager')">管理</el-menu-item>
+          </el-sub-menu>
           <!-- 工资管理菜单项 -->
-          <el-menu-item index="5" @click="router.push('/manager')">
-            <el-icon>
-              <Money/>
-            </el-icon>
-            <span>工资管理</span>
-          </el-menu-item>
+          <el-sub-menu index="5">
+            <template #title>
+              <el-icon>
+                <Money/>
+              </el-icon>
+              <span>工资管理</span>
+            </template>
+            <el-menu-item index="5-1" @click="router.push('/salaryShow')">看板</el-menu-item>
+            <el-menu-item index="5-2" @click="router.push('/salaryManager')">管理</el-menu-item>
+          </el-sub-menu>
+          <!-- 考核管理菜单项 -->
+          <el-sub-menu index="6">
+            <template #title>
+              <el-icon>
+                <Histogram/>
+              </el-icon>
+              <span>考核管理</span>
+            </template>
+            <el-menu-item index="6-1" @click="router.push('/assessmentShow')">看板</el-menu-item>
+            <el-menu-item index="6-2" @click="router.push('/assessmentManager')">管理</el-menu-item>
+          </el-sub-menu>
         </el-menu>
       </div>
       <!-- 右侧内容区域 -->
@@ -199,7 +226,7 @@
 
 /* 左侧菜单容器样式 */
 .menu-container {
-  width: 220px; /* 菜单宽度 */
+  width: 160px; /* 菜单宽度 */
   background-color: var(--card-bg);
   height: 100%;
   transition: all var(--transition-duration);
@@ -245,6 +272,23 @@
   border-right: 3px solid var(--primary-color);
 }
 
+/* 一级菜单文字和图标颜色 */
+:deep(.el-menu-item),
+:deep(.el-sub-menu .el-sub-menu__title) {
+  color: #000000 !important;
+}
+
+/* 一级菜单hover状态 */
+:deep(.el-menu-item:hover),
+:deep(.el-sub-menu .el-sub-menu__title:hover) {
+  color: rgb(80, 97, 238) !important;
+}
+
+/* 一级菜单激活状态 */
+:deep(.el-menu-item.is-active) {
+  color: #2a40da !important;
+}
+
 :deep(.el-dropdown-menu__item) {
   display: flex;
   align-items: center;
@@ -258,7 +302,7 @@
 }
 
 :deep(.el-dropdown-menu__item:hover) {
-  background-color: rgba(58, 142, 230, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--primary-color);
 }
 
@@ -276,6 +320,7 @@ import {
   HomeFilled,
   Lock,
   Money,
+  Histogram,
   PictureRounded,
   Search,
   Setting,

@@ -1,6 +1,6 @@
 <template>
   <div>
-    考勤管理
+    考勤管理Show
   </div>
 </template>
 
